@@ -1,0 +1,13 @@
+{
+  "name": "@trim-url/backend",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {},
+  "dependencies": {
+    "aws-sdk": "^2.1128.0",
+    "nanoid": "^3.3.4"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.95"
+  }
+}
