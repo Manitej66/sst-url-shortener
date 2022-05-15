@@ -19,10 +19,18 @@ export const handler = async (event) => {
 
     if (item.Items) {
       // redirect to the short url
+      var original_url = item.Items[0].og_url;
+      if (
+        original_url.slice(0, 8) != "https://" &&
+        original_url.slice(0, 7) != "http://"
+      ) {
+        //Prepends scheme to the redirect url if it is absent in the database item
+        original_url = "https://" + original_url;
+      }
       return {
         statusCode: 302,
         headers: {
-          Location: item.Items[0].og_url,
+          Location: original_url,
         },
       };
     }
